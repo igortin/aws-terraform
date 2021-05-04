@@ -78,14 +78,6 @@ resource "aws_launch_template" "trainning-launch-template" {
   }
   
   user_data = filebase64("template/cloud-config.sh")
-  
-  block_device_mappings {
-    device_name = "/dev/xda1"
-    ebs {
-      volume_size = 20
-    }
-  }
-  
   monitoring {
     enabled = true
   }
